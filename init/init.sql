@@ -1,0 +1,7 @@
+CREATE DATABASE IF NOT EXISTS stock_auth_db;
+CREATE DATABASE IF NOT EXISTS stock_portfolio_db;
+
+CREATE USER IF NOT EXISTS 'admin'@'%' IDENTIFIED BY '${MYSQL_PASSWORD}';
+GRANT ALL PRIVILEGES ON stock_auth_db.* TO 'admin'@'%';
+GRANT ALL PRIVILEGES ON stock_portfolio_db.* TO 'admin'@'%';
+FLUSH PRIVILEGES;
